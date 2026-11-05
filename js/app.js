@@ -21,11 +21,38 @@
     const filterDone = document.getElementById("filter-done");      // filter-done --> filterDone
 
     let currentFilter = "all"; // we use let becase NO. will cange if use botton
-    
 
 
+function updateList() {
+
+    let remaining = 0;    // start from 0 if i call
+    for (const item of list.children) {    // loop for all item in list 
+        const completed = item.classList.contains("completed");   // if name class == completed so true alse false
+
+        if (!completed) {   // if completed= not true  ++
+        remaining++;
+      }
+      
+
+      let show = true;   
+
+      if (currentFilter === "active" && completed) {            // chacke  currentFilter === "active" and  completed true
+        show = false;                                           
+      } else if (currentFilter === "done" && !completed) {      // if end and but completed is false 
+        show = false;
+      }
+
+      if (show) {                               // show T or F if T del display value  and retern to orgin css      if F hiden
+         item.style.display = "";
+       } else {
+            item.style.display = "none";
+}                   
+    }
+
+    counter.textContent = remaining + " item(s) left";  // write NO. inside counter 
+  }
 
 
+    }
 
-
-}
+})();
