@@ -53,6 +53,41 @@ function updateList() {
   }
 
 
+
+
+
+
+  form.addEventListener("submit", function (event) {                //show sent form submit   work if enter Add or  Enter؛
+    event.preventDefault();                                         // normal page can by Reload page 
+
+
+
+    const text = input.value.trim();                                   // wride text and deleate space ____ in start and ent  "    hi"     or         "by      "
+
+    if (text === "") {                                              // test after deleate spase    is empte ?
+      error.classList.remove("hidden");                         //
+      return;                                                       // stoppppp
     }
+
+    error.classList.add("hidden");                                  // if crect hidden error masage
+    const item = document.createElement("li");                          
+    const span = document.createElement("span");
+    span.className = "item-text";                           // add class item-text for agrees whit css
+    span.textContent = text;                                    //يضع نص المستخدم داخل العنصر كنص عادي.
+
+    const deleteButton = document.createElement("button");      // create delete button 
+    deleteButton.className = "delete-btn";                          //يعطي الزر كلاس delete-btn
+    deleteButton.textContent = "Delete";                            // text  in the button (Delete)
+
+    item.appendChild(span);
+    item.appendChild(deleteButton);
+    list.appendChild(item);
+
+    updateList();       //يحدث العداد ويطبق الفلتر الحالي على المهمة الجديدة
+  });
+
+
+
+    
 
 })();
