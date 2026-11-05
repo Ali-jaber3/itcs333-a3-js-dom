@@ -90,4 +90,21 @@ function updateList() {
 
     
 
+    list.addEventListener("click", function (event) {           // lessing 
+    const target = event.target;                                //save what user clicked
+
+
+
+    if (target.classList.contains("delete-btn")) {          // clicked ?
+      target.parentElement.remove();                        //deleate  text and button 
+    } else if (target.classList.contains("item-text")) {    // is deleate if no :
+      target.parentElement.classList.toggle("completed");      // change class completed   if nat have add if have romve 
+    }
+
+    updateList();
+  });
+
+
+  
+
 })();
