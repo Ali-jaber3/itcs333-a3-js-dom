@@ -105,6 +105,29 @@ function updateList() {
   });
 
 
-  
+
+                                                                    //Filter buttons and counter configuration
+    filterAll.addEventListener("click", function () {               //see i clicked to buttons All ???
+    currentFilter = "all";                                          // put mode (currentFilter) to sow "all"      
+    updateList();                                                   //applied filter and mack updated.
+  });
+
+
+                                                                    //Filter buttons and counter configuration
+  filterActive.addEventListener("click", function () {              //see i clicked to buttons active ???
+    currentFilter = "active";                                       // put mode (currentFilter) to sow "active"
+    updateList();                                                    //applied filter and mack updated.
+  });
+
+
+
+                                                                //Filter buttons and counter configuration
+  filterDone.addEventListener("click", function () {            //see i clicked to buttons All ???
+    currentFilter = "done";                                     // put mode (currentFilter) to sow "done"
+    updateList();                                                 //applied filter and mack updated.
+  });
+
+  updateList();             // Only the completed(end) view is selected.
+
 
 })();
